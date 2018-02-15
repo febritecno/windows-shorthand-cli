@@ -1,0 +1,1 @@
+box && vagrant up && vagrant ssh
