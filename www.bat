@@ -1,2 +1,2 @@
-F:
-cd F:\book\admin\www
+C:
+cd C:\laragon\www

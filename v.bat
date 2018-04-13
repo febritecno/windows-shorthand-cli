@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft VS Code\bin\code" -n .

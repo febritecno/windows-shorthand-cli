@@ -4,12 +4,11 @@ Vagrant.require_version '>= 1.5'
 Vagrant.configure('2') do |config|
   name = File.basename(Dir.getwd) + '-dev'
 
-  config.vm.box = 'joshfng/railsbox'
+  config.vm.box = 'joshfng/railsbox' #edit sesuai load box kalau local, itu cloud
   config.ssh.forward_agent = true
   config.vm.hostname = name
 
-  config.vm.synced_folder '.', '/vagrant'
-  config.vm.synced_folder './www', '/vagrant/www'
+  config.vm.synced_folder '.', '/febri' #folder sharing vm dan laptop
   	
   config.vm.provider :virtualbox do |v|
     v.name = name
@@ -22,12 +21,14 @@ Vagrant.configure('2') do |config|
       '--natdnshostresolver1', 'on'
     ]
   end
-
-  
   
   #note:
+  #user/password ssh dan root = vagrant/vagrant
+  #user/password mysql = root/root
+  #file rails.box
   #localhost=set 0.0.0.0 di vagrant bukan 127.0.0.1
   
+  #port untuk bisa vm di akses di laptop
 	# rails
 	config.vm.network 'forwarded_port', guest: 3000, host: 3000
 	#strapi
